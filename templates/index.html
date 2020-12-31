@@ -2,17 +2,16 @@
 <head>
 </head>
 <body>
-   <!--form action="/" method="post" -->
    <form method ="post" action="/">
     <label for="userinput">User Input</label><br>
     <textarea id="userinput" name="userinput" rows="8" cols="80"></textarea><br>
-    <button type="submit" name="wcount" value="wcount">Words Counts</button>
+    <button type="submit" name="wcount" value="wcount">Word Counts</button>
     <button type="submit" name="uniquewords" value="uniquewords">Unique Words</button>
     <button type="submit" name="titletext" value="titletext">Title Input Text</button>
   </form>
     <br>
     <br>
     <label for="result">Result For The Selected Action</label><br>
-    <textarea id="result" name="result" rows="8" cols="80" value="hi">{{forward_message}}</textarea>
+    <textarea id="result" name="result" rows="8" cols="80" value="hi">{{message}}</textarea>
 </body>
 </html>

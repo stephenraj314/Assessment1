@@ -1,6 +1,6 @@
 from flask import *
 import re
-
+#using regex for multidelimiter split()
 
 app = Flask(__name__)
 
@@ -8,17 +8,19 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 @app.route("/",methods=['GET', 'POST'])
-def pro():
+def func():
     if request.method == 'POST':
         text=request.form["userinput"]
         if request.form.get("wcount"):
-            forward_message=len(text.split())
+            message=len(text.split())
         elif request.form.get("uniquewords"):
+            #using split to seprate words in string and using set() to find unique words
             s2=",".join(set(re.split('[,\s]\s*',text.lower())))
-            forward_message=s2
+            message=s2
         elif request.form.get("titletext"):
-            forward_message=text.title()
-    return render_template("index.html", forward_message=forward_message)
+            #using title() to convert first letters to capital letters
+            message=text.title()
+    return render_template("index.html", message=message)
 
 
 if __name__=="__main__":
